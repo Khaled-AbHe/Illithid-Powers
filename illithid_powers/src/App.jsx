@@ -12,7 +12,9 @@ function App() {
         className="absolute right-0 left-0 top-0 bottom-0 m-auto scale-200 z-1"
         src={brain}
       />
-      <div className="z-2"></div>
+      <div className="right-0 left-0 m-auto h-220 w-190 z-2">
+        <Power link={illithidIdentification} />
+      </div>
     </div>
   );
 }
