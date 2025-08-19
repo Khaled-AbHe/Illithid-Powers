@@ -29,6 +29,12 @@ export default function Power(props) {
             toggleInfo={toggleInfo}
             claim={claim}
             toggleClaim={toggleClaim}
+            name={props.name}
+            cost={props.cost}
+            charges={props.charges}
+            duration={props.duration}
+            description={props.description}
+            req={props.req}
           />
         )}
       </div>
