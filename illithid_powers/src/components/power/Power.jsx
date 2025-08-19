@@ -10,7 +10,7 @@ export default function Power(props) {
   }
 
   function toggleClaim() {
-    setClaim((prev) => !prev);
+    setClaim(true);
   }
 
   return (
@@ -18,7 +18,7 @@ export default function Power(props) {
       <div
         className={
           "bg-stone-900 rounded-full border-3 size-15 hover:cursor-pointer " +
-          `${claim ? " border-pink-800" : " border-pink-400"}`
+          `${claim ? " border-slate-600" : " border-pink-500"}`
         }
       >
         <img src={props.link} onClick={() => toggleInfo()} />
