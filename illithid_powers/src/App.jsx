@@ -1,7 +1,12 @@
 import Menu from "./components/Menu";
-import { users } from "./assets/data";
+import { useState, useEffect } from "react";
 
 function App() {
+  const [userData, setUserData] = useState(null);
+
+  useEffect(() => {}, []);
+
+  console.log(userData);
   return (
     <div>
       <Menu />
