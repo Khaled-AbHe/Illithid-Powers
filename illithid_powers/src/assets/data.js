@@ -1,268 +1,214 @@
-// Base abilities template (all false except IllithidIdentification)
-const baseAbilities = {
-  IllithidIdentification: true,
-  KyarasInfluence: false,
-  PsionicOverload: false,
-  MentalRejuvenation: false,
-  ForcePush: false,
-  LuckOfTheFarRealms: false,
-  ForceRepel: false,
-  PsionicBacklash: false,
-  StageFright: false,
-  MentalShielding: false,
-  DefensiveSwap: false,
-  TransfuseHealth: false,
-  CullOfTheWeak: false,
-  PsionicBeam: false,
-  AbsorbIntellect: false,
-  PsionicEscape: false,
-  BlackHole: false,
-  Freecast: false,
-  SecondChance: false,
-  Enthrall: false,
-  ForcefulStrikes: false,
+export const mindData = {
+  resources: {
+    vials: 0,
+  },
+  abilities: {
+    IllithidIdentification: {
+      name: "Illithid Identification",
+      imgPath: "/src/assets/photos/illithid_identification.png",
+      desc: "As a Bonus action, you can identify those who are connected to Kyara herself. When you activate this ability, psionic strands will be revealed to you, and they will attach themselves to other tadpole bearers. You must use your Bonus action on subsequent turns to keep the strands from disappearing.",
+      cntrl: {
+        req: "None",
+        unlocked: true,
+      },
+    },
+    KyarasInfluence: {
+      name: "Kyara's Influence",
+      imgPath: "/src/assets/photos/inner_circle/Kyara_Influence.png",
+      desc: "Kyara's voice is allusive. When you take the Influence action, you can add your Proficiency bonus on the result of the roll. Once you use this ability, you can't do so again until you finish a Long rest.",
+      cntrl: {
+        req: "Illithid Identification",
+        unlocked: false,
+      },
+    },
+    PsionicOverload: {
+      name: "Psionic Overload",
+      imgPath: "/src/assets/photos/inner_circle/Psionic_Overload.png",
+      desc: "As a Bonus action, you can push your mind to its very limits to bolster your power for 1 minute. When you do so, you deal an additional 1d4 Psychic damage each time you make a damage roll at the cost of taking 1d4 Psychic damage at the end of each of your turns. Once you use this ability, you can't do so again until you finish a Short or Long rest.",
+      cntrl: {
+        req: "Illithid Identification",
+        unlocked: false,
+      },
+    },
+    MentalRejuvenation: {
+      name: "Mental Rejuvenation",
+      imgPath: "/src/assets/photos/inner_circle/Mental_Rejuvenation.png",
+      desc: "Your mind can reinforce your body further as it recovers. Whenever you regain Hit Points, you can choose to gain 10 Temporary Hit Points an amount of times equal to your Proficiency bonus. You regain all expended charges when you finish a Long rest.",
+      cntrl: {
+        req: "Illithid Identification",
+        unlocked: false,
+      },
+    },
+    ForcePush: {
+      name: "Force Push",
+      imgPath: "/src/assets/photos/inner_circle/Psionic_Overload.png",
+      desc: "As a Magic action, you can charge forward 10 feet and knock back all enemies in your path 15 feet away. Once you use this ability, you can't do so again until you finish a Short or Long rest.",
+      cntrl: {
+        req: "Illithid Identification",
+        unlocked: false,
+      },
+    },
+    LuckOfTheFarRealms: {
+      name: "Luck Of The Far Realms",
+      imgPath: "/src/assets/photos/mid_circle/Luck_of_the_Far_Realms.png",
+      desc: "Kyara tips the scales to your favor. When you miss an attack roll or fail a saving throw you can add your proficiency bonus to the roll as a Reaction, potentially turning the failed roll into a successful one. Once you use this ability, you can't do so again until you finish a Long rest.",
+      cntrl: {
+        req: "Kyara's Influence",
+        unlocked: false,
+      },
+    },
+    ForceRepel: {
+      name: "Force Repel",
+      imgPath: "/src/assets/photos/mid_circle/Force_Repel.png",
+      desc: "As a Magic action, you can push all creatures away from you. When you do so, all creatures must make a Strength saving throw against your Spell save DC. On a failed save, the creature is pushed back 30 feet and takes 4d6 Force damage. On a successful save, the creature takes half as much damage. Once you use this ability, you can't do so again until you finish a Long rest.",
+      cntrl: {
+        req: "Force Push",
+        unlocked: false,
+      },
+    },
+    PsionicBacklash: {
+      name: "Psionic Backlash",
+      imgPath: "/src/assets/photos/mid_circle/Psionic_Backlash.png",
+      desc: "Whenever a creature casts a spell, you can roll a number of d6s equal to the spell's level and deal Psychic damage equal to the amount rolled.",
+      cntrl: {
+        req: "Force Push or Kyara's Influence",
+        unlocked: false,
+      },
+    },
+    StageFright: {
+      name: "Stage Fright",
+      imgPath: "/src/assets/photos/mid_circle/Stage_Fright.png",
+      desc: "As a Magic Action, you can choose a point within 60 feet of you to conjure Kyara's intimidating presence. Each creature in a 20-foot-radius Sphere centered on that point makes a Wisdom saving throw against your Spell save DC or have Disadvantage on attack rolls and take 2d6 Psychic damage each time they miss. Once you use this ability, you can't do so again until you finish a Short or Long rest.",
+      cntrl: {
+        req: "Kyara's Influence or Psionic Overload",
+        unlocked: false,
+      },
+    },
+    MentalShielding: {
+      name: "Mental Shielding",
+      imgPath: "/src/assets/photos/mid_circle/Mental_Shielding.png",
+      desc: "The Temporary Hit Points you gain from Mental Rejuvenation increases to 20.",
+      cntrl: {
+        req: "Mental Rejuvenation",
+        unlocked: false,
+      },
+    },
+    DefensiveSwap: {
+      name: "Defensive Swap",
+      imgPath: "/src/assets/photos/mid_circle/Defensive_Swap.png",
+      desc: "Whenever an ally within 30 feet of you gets hit by an attack, you can use your Reaction to swap places with them to take the hit for them. The ally also regains 2d8 hit points. Once you use this ability, you can't do so again until you finish a Short or Long rest.",
+      cntrl: {
+        req: "Mental Rejuvenation or Force Push",
+        unlocked: false,
+      },
+    },
+    TransfuseHealth: {
+      name: "Transfuse Health",
+      imgPath: "/src/assets/photos/mid_circle/Transfuse_Health.png",
+      desc: "As a Magic action, you can expend up to 50% of your current Hit Points to heal a creature you can touch. Once you use this ability, you can't do so again until you finish a Long rest.",
+      cntrl: {
+        req: "Mental Rejuvenation or Psionic Overload",
+        unlocked: false,
+      },
+    },
+    CullOfTheWeak: {
+      name: "Cull Of The Weak",
+      imgPath: "/src/assets/photos/mid_circle/Cull_the_Weak.png",
+      desc: "Kyara makes sure your enemies fall when they're at their weakest. Whenever you hit a target, if the remaining Hit Points they have after taking damage is equal or less than the amount of Illithid powers you have unlocked, they die instantly and creatures within 10 feet of it takes 1d4 Psychic damage.",
+      cntrl: {
+        req: "Psionic Overload",
+        unlocked: false,
+      },
+    },
+    PsionicBeam: {
+      name: "Psionic Beam",
+      imgPath: "/src/assets/photos/outer_circle/Psionic_Beam.png",
+      desc: "As a Magic action, you can unleash a 100-foot-long, 5-foot-wide psychic beam in a direction you choose. Each creature in the Line makes an Intelligence saving throw against your Spell save DC, taking 8d6 Psychic damage on a failed save or half as much damage on a successful one. Additionally, allies within the Line regains 8d6 Hit Points. Once you use this ability, you can't do so again until you finish a Long rest.",
+      cntrl: {
+        req: "Transfuse Health",
+        unlocked: false,
+      },
+    },
+    AbsorbIntellect: {
+      name: "Absorb Intellect",
+      imgPath: "/src/assets/photos/outer_circle/Absorb_Intellect.png",
+      desc: "As a Magic action, you can absorb the intelligence of a creature you can touch. The target makes an Intelligence saving throw against your Spell Save DC or its Intelligence score gets reduced by 2 for an hour, and you regain 4d6 Hit Points. Once you use this ability, you can't do so again until you finish a Long rest.",
+      cntrl: {
+        req: "Mental Shielding",
+        unlocked: false,
+      },
+    },
+    PsionicEscape: {
+      name: "Psionic Escape",
+      imgPath: "/src/assets/photos/outer_circle/Psionic_Escape.png",
+      desc: "As a Magic action, you and a willing creature you touch teleport in a location within 100 feet of you. Creatures within 10 feet of you before you teleport makes a Constitution saving throw, taking 4d6 Force damage on a failed save or half as much on a successful one. Once you use this ability, you can't do so again until you finish a Long rest.",
+      cntrl: {
+        req: "Defensive Swap",
+        unlocked: false,
+      },
+    },
+    BlackHole: {
+      name: "Black Hole",
+      imgPath: "/src/assets/photos/outer_circle/Black_Hole.png",
+      desc: "As a Magic action, you can conjure a black hole within 60 feet of you. Creatures within 20 feet of the black hole gets pulled 20 feet towards it and makes an Intelligence saving throw against your Spell save DC. On a failed save, the creature is under the effects of the Slow spell until the end of your next turn. Once you use this ability, you can't do so again until you finish a Long rest.",
+      cntrl: {
+        req: "Force Repel",
+        unlocked: false,
+      },
+    },
+    Freecast: {
+      name: "Freecast",
+      imgPath: "/src/assets/photos/outer_circle/Freecast.png",
+      desc: "You have discovered a marvelous adaptability within yourself. Spell slots, charges, and similar resource costs for your next action or spell are removed. Once you use this ability, you can't do so again until you finish a Long rest.",
+      cntrl: {
+        req: "Psionic Backlash",
+        unlocked: false,
+      },
+    },
+    SecondChance: {
+      name: "Second Chance",
+      imgPath: "/src/assets/photos/outer_circle/Second_Chance.png",
+      desc: "Whenever you fail a d20 test, you can reroll it and use the new roll. Once you use this ability, you can't do so again until you finish a Long rest.",
+      cntrl: {
+        req: "Luck Of The Far Realms",
+        unlocked: false,
+      },
+    },
+    Enthrall: {
+      name: "Enthrall",
+      imgPath: "/src/assets/photos/outer_circle/Enthrall.png",
+      desc: "As a Magic action, you can subjugate a creature under your control. A creature you can touch makes a Wisdom saving throw or be under the effects of the Dominate Person spell and Zone of Truth spell for 10 minutes. Once the effect wears off, all future saving throws they make to resist this ability is made with Advantage. Once you use this ability, you can't do so again until you finish a Long rest.",
+      cntrl: {
+        req: "Stage Fright",
+        unlocked: false,
+      },
+    },
+    ForcefulStrikes: {
+      name: "Forceful Strikes",
+      imgPath: "/src/assets/photos/outer_circle/ForcefulStrikes.png",
+      desc: "As a Bonus action, you can make your attacks deal True damage. When you use this ability, all damage you deal turn bypasses resistances and converts immunities into resistances for 1 turn. Once you use this ability, you can't do so again until you finish a Long rest.",
+      cntrl: {
+        req: "Cull Of The Weak",
+        unlocked: false,
+      },
+    },
+  },
 };
 
-// Users list
-export const users = [
-  {
-    username: "Srosu",
-    password: "Paladin123",
-    abilities: { ...baseAbilities },
-  },
-  {
-    username: "Ximora",
-    password: "Rogue123",
-    abilities: { ...baseAbilities },
-  },
-  {
-    username: "Ezryn",
-    password: "Warlock123",
-    abilities: { ...baseAbilities },
-  },
-  {
-    username: "Elk",
-    password: "Barbarian123",
-    abilities: { ...baseAbilities },
-  },
-  {
-    username: "Mateo",
-    password: "Robot123",
-    abilities: { ...baseAbilities },
-  },
-];
+// Helper function to check if a power is unlockable
+export function isUnlockable(powerKey, allAbilities) {
+  const power = allAbilities[powerKey];
 
-export const abilities = [
-  // --- Starting Point ---
-  {
-    // 0
-    name: "Illithid Identification",
-    cost: "Free Action",
-    charges: "Unlimited, must activate",
-    duration: "Instantaneous",
-    description: "You can identify other tadpole bearers.",
-    requirement: null,
-  },
+  // No requirement = always unlockable
+  if (!power.cntrl.req) return true;
 
-  // --- Inner Circle ---
-  {
-    // 1
-    name: "Kyara's Influence",
-    cost: "Free Action",
-    charges: "Once per long rest",
-    duration: "Instantaneous",
-    description: "Add your proficiency bonus to any influence check.",
-    requirement: "IllithidIdentification",
-  },
-  {
-    // 2
-    name: "Psionic Overload",
-    cost: "Bonus Action",
-    charges: "Once per short rest",
-    duration: "1 minute",
-    description:
-      "Your attacks deal an additional 1d4 psychic damage, but at the end of each of your turns you also take 1d4 psychic damage.",
-    requirement: "IllithidIdentification",
-  },
-  {
-    // 3
-    name: "Mental Rejuvenation",
-    cost: "Free Action",
-    charges: "Equal to proficiency bonus",
-    duration: "Instantaneous",
-    description: "You restore yourself mentally (effect depends on system).",
-    requirement: "IllithidIdentification",
-  },
-  {
-    // 4
-    name: "Force Push",
-    cost: "Action",
-    charges: "Once per short rest",
-    duration: "Instantaneous",
-    description:
-      "Charge forward, pushing all objects and creatures in your path 15 ft away.",
-    requirement: "IllithidIdentification",
-  },
+  // Parse "or" requirements
+  const requirements = power.cntrl.req
+    .split(" or ")
+    .map((r) => r.trim().replaceAll(" ", "").replaceAll("'", ""));
 
-  // --- Middle Circle ---
-  {
-    // 5
-    name: "Luck Of The Far Realms",
-    cost: "Reaction",
-    charges: "Once per long rest",
-    duration: "Instantaneous",
-    description:
-      "You can add your proficiency bonus to any attack roll or save except death saves.",
-    requirement: "KyarasInfluence",
-  },
-  {
-    // 6
-    name: "Force Repel",
-    cost: "Action",
-    charges: "Once per long rest",
-    duration: "Instantaneous",
-    description:
-      "All creatures within 10 ft are pushed back 20 ft and take 2d6 force damage.",
-    requirement: "ForcePush",
-  },
-  {
-    // 7
-    name: "Psionic Backlash",
-    cost: "Reaction",
-    charges: "Unlimited",
-    duration: "Instantaneous",
-    description:
-      "When a creature casts a spell, you can deal 1d4 psychic damage to that creature.",
-    requirement: "ForcePush or KyarasInfluence",
-  },
-  {
-    // 8
-    name: "Stage Fright",
-    cost: "Magic Action",
-    charges: "Once per short rest",
-    duration: "Instantaneous",
-    description:
-      "Creatures in a 20 ft radius within 60 ft make a Wisdom save or gain disadvantage on attacks and take 2d6 psychic damage per missed attack until they hit you.",
-    requirement: "KyarasInfluence or PsionicOverload",
-  },
-  {
-    // 9
-    name: "Mental Shielding",
-    cost: "Free Action",
-    charges: "Equal to proficiency bonus",
-    duration: "Instantaneous",
-    description:
-      "When Mental Rejuvenation is used, also gain 10 temporary hit points.",
-    requirement: "MentalRejuvenation",
-  },
-  {
-    // 10
-    name: "Defensive Swap",
-    cost: "Reaction",
-    charges: "Once per short rest",
-    duration: "Instantaneous",
-    description:
-      "Swap places with an ally within 30 ft when they are attacked. That ally regains 2d8 health.",
-    requirement: "MentalRejuvenation or ForcePush",
-  },
-  {
-    // 11
-    name: "Transfuse Health",
-    cost: "Bonus Action",
-    charges: "Once per long rest",
-    duration: "Instantaneous",
-    description: "Sacrifice up to 50% of your health to heal an ally.",
-    requirement: "MentalRejuvenation or PsionicOverload",
-  },
-  {
-    // 12
-    name: "Cull Of TheWeak",
-    cost: "Togglable Passive",
-    charges: "N/A",
-    duration: "Instantaneous",
-    description:
-      "When you attack a creature and their HP ≤ the number of Illithid powers you have unlocked, they die instantly and deal 1d4 psychic damage to nearby enemies.",
-    requirement: "PsionicOverload",
-  },
-
-  // --- Outer Circle ---
-  {
-    // 13
-    name: "Psionic Beam",
-    cost: "Action",
-    charges: "Once per long rest",
-    duration: "Instantaneous",
-    description:
-      "100 ft line (5 ft wide) that deals 8d6 psychic damage (half on save) to enemies and heals allies for 8d6.",
-    requirement: "TransfuseHealth",
-  },
-  {
-    // 14
-    name: "Absorb Intellect",
-    cost: "Action",
-    charges: "Once per long rest",
-    duration: "Instantaneous",
-    description:
-      "Reduce enemy Intelligence by 1 and heal 4d6 HP. This effect can stack.",
-    requirement: "MentalShielding",
-  },
-  {
-    // 15
-    name: "Psionic Escape",
-    cost: "Action",
-    charges: "Once per long rest",
-    duration: "Instantaneous",
-    description:
-      "Teleport up to 100 ft with 1 ally. Creatures near your old spot take 4d6 force damage.",
-    requirement: "DefensiveSwap",
-  },
-  {
-    // 16
-    name: "Black Hole",
-    cost: "Action",
-    charges: "Once per long rest",
-    duration: "Instantaneous",
-    description:
-      "Summon a 20 ft radius black hole that pulls creatures in and forces Wisdom saves or Slowed.",
-    requirement: "ForceRepel",
-  },
-  {
-    // 17
-    name: "Freecast",
-    cost: "Passive",
-    charges: "Once per long rest",
-    duration: "Instantaneous",
-    description:
-      "Your next action or spell costs no spell slots/charges/resources.",
-    requirement: "PsionicBacklash",
-  },
-  {
-    // 18
-    name: "Second Chance",
-    cost: "Free Action",
-    charges: "Once per long rest",
-    duration: "Instantaneous",
-    description: "You gain one Heroic Inspiration.",
-    requirement: "LuckOfTheFarRealms",
-  },
-  {
-    // 19
-    name: "Enthrall",
-    cost: "Action",
-    charges: "Once per long rest",
-    duration: "10 minutes",
-    description:
-      "Target creature makes a Wisdom save or is affected by Dominate Person + Zone of Truth. Future attempts give them advantage.",
-    requirement: "StageFright",
-  },
-  {
-    // 20
-    name: "Forceful Strikes",
-    cost: "Bonus Action",
-    charges: "Once per long rest",
-    duration: "Instantaneous",
-    description:
-      "All damage this turn bypasses resistances and converts immunities into resistances.",
-    requirement: "CullOfTheWeak",
-  },
-];
+  // Check if ANY requirement is met (for "or" logic)
+  return requirements.some((reqName) => {
+    return allAbilities[reqName]?.cntrl.unlocked === true;
+  });
+}

@@ -1,5 +1,4 @@
 import Menu from "./components/Menu";
-import { users } from "./assets/data";
 
 function App() {
   return (
