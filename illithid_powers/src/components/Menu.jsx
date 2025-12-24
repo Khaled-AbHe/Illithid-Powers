@@ -9,13 +9,13 @@ function Menu() {
   const { data } = useContext(DataContext);
 
   return (
-    <div className="bg-radial from-red-950 to-black h-screen w-full flex overflow-hidden select-none">
+    <div className="flex h-screen w-full overflow-hidden bg-radial from-red-950 to-black select-none">
       <img
-        className="absolute right-0 left-0 top-0 bottom-0 m-auto scale-200 z-0"
+        className="absolute top-0 right-0 bottom-0 left-0 z-0 m-auto scale-200"
         src={brain}
       />
       <Vials />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-220 w-190 z-1">
+      <div className="absolute top-1/2 left-1/2 z-1 h-220 w-190 -translate-x-1/2 -translate-y-1/2">
         {/* Inner Circle */}
         <div className="relative top-[49%] left-[47%] w-fit">
           <Power power={data.abilities.IllithidIdentification} data={data} />

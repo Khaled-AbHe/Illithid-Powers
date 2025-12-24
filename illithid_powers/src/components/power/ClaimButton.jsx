@@ -40,11 +40,11 @@ function ClaimButton(props) {
   }, [btn]);
 
   return (
-    <div className="absolute flex justify-center h-20 w-full bottom-0">
+    <div className="absolute bottom-0 flex h-20 w-full justify-center">
       <button
         className={
           `${btn.style}` +
-          "absolute bottom-10 mx-[49%] border-2 px-3 py-1 rounded-full text-center"
+          "absolute bottom-10 mx-[49%] rounded-full border-2 px-3 py-1 text-center"
         }
         onClick={() => {
           props.handleClaim();

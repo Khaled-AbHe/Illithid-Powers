@@ -6,11 +6,11 @@ export default function PowerDesc(props) {
 
   return (
     <>
-      <div className="fixed right-[-73%] top-0 bottom-0 bg-black/50 select-none cursor-auto z-10 w-screen">
-        <div className="absolute rounded-4xl border-pink-500 border-3 bg-radial from-neutral-800 to-neutral-950 left-0 right-0 top-0 bottom-0 h-150 w-300 m-auto">
+      <div className="fixed top-0 right-[-73%] bottom-0 z-10 w-screen cursor-auto bg-black/50 select-none">
+        <div className="absolute top-0 right-0 bottom-0 left-0 m-auto h-150 w-300 rounded-4xl border-3 border-pink-500 bg-radial from-neutral-800 to-neutral-950">
           {/* Escape */}
           <p
-            className="absolute right-3 top-3 px-2 rounded-full w-fit text-pink-500 font-bold hover:cursor-pointer"
+            className="absolute top-3 right-3 w-fit rounded-full px-2 font-bold text-pink-500 hover:cursor-pointer"
             onClick={() => props.toggleInfo()}
           >
             X
@@ -21,16 +21,16 @@ export default function PowerDesc(props) {
             src={props.imgPath}
           />
           {/* Description */}
-          <div className="absolute mx-[40%] my-10 top-10 w-150 h-100 text-xl">
-            <p className="text-pink-500 font-extrabold font-serif mb-10 text-5xl">
+          <div className="absolute top-10 mx-[40%] my-10 h-100 w-150 text-xl">
+            <p className="mb-10 font-serif text-5xl font-extrabold text-pink-500">
               {props.name}
             </p>
-            <div className="text-white m-2">
-              <p className="inline text-pink-500 font-bold">Description: </p>
+            <div className="m-2 text-white">
+              <p className="inline font-bold text-pink-500">Description: </p>
               {props.desc}
             </div>
-            <div className="text-white m-2">
-              <p className="inline text-pink-500 font-bold">Requirements: </p>
+            <div className="m-2 text-white">
+              <p className="inline font-bold text-pink-500">Requirements: </p>
               {props.cntrl.req}
             </div>
           </div>

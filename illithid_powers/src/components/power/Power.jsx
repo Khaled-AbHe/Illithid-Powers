@@ -31,7 +31,7 @@ export default function Power(props) {
     <>
       <div
         className={
-          "bg-stone-900 rounded-full border-3 size-15 hover:cursor-pointer " +
+          "size-15 rounded-full border-3 bg-stone-900 hover:cursor-pointer " +
           `${
             props.power.cntrl.unlocked
               ? " border-pink-500"
