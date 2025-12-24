@@ -224,11 +224,10 @@ export function isUnlockable(powerKey, data) {
   const power = data.abilities[powerKey];
   const vials = data.resources["vials"];
 
-  // No requirement = always unlockable
-  if (!power.cntrl.req) return true;
+  if (power.cntrl.unlocked === true) return 0;
 
-  // Check if required cost is met
-  if (power.cntrl.cost > vials) return false;
+  // No requirement = always unlockable
+  if (power.cntrl.req === "Illithid Tadpole") return 1;
 
   // Parse "or" requirements
   const requirements = power.cntrl.req
@@ -236,7 +235,23 @@ export function isUnlockable(powerKey, data) {
     .map((r) => r.trim().replaceAll(" ", "").replaceAll("'", ""));
 
   // Check if ANY requirement is met (for "or" logic)
-  return requirements.some((reqName) => {
-    return data.abilities[reqName]?.cntrl.unlocked === true;
-  });
+  let hasReq = requirements.some(
+    (reqName) => data.abilities[reqName]?.cntrl.unlocked
+  )
+    ? 1
+    : 2;
+
+  return checkVials(hasReq, power, vials);
+}
+
+function checkVials(hasReq, power, vials) {
+  if (hasReq == 2) {
+    return 2;
+  } else if (hasReq == 1) {
+    // Check if required cost is met
+    if (power.cntrl.cost > vials) {
+      return 3;
+    }
+    return 1;
+  }
 }

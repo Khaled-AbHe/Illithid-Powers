@@ -16,8 +16,15 @@ export default function Power(props) {
 
   function handleClaim() {
     const cost = props.power.cntrl.cost;
-    decrease(cost);
-    unlockPower(powerKey);
+    let ans = prompt(
+      `Are you sure you want to claim ${props.power.name} for ${cost} ${
+        cost > 1 ? "vials" : "vial"
+      }?. You will not be able to unclaim it after it is claimed. (Type 'YES' to proceed)`
+    );
+    if (ans.toLowerCase().trim() == "yes") {
+      decrease(cost);
+      unlockPower(powerKey);
+    }
   }
 
   return (

@@ -56,6 +56,17 @@ export function DataProvider({ children }) {
       },
     }));
   }
+
+  function reset() {
+    let ans = prompt(
+      "Are you sure you want to do this? This will clear out all of your vials and unlocked abilities. (Type 'YES' to proceed)"
+    );
+    if (ans.toLowerCase().trim() == "yes") {
+      setVials(0);
+      setData(mindData);
+    }
+  }
+
   return (
     <DataContext.Provider
       value={{
@@ -65,6 +76,7 @@ export function DataProvider({ children }) {
         saveVials,
         increase,
         decrease,
+        reset,
       }}
     >
       {children}

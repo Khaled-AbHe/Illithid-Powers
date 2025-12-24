@@ -1,10 +1,8 @@
 import { isUnlockable } from "../../assets/data";
-import { useState } from "react";
 import ClaimButton from "./ClaimButton";
 
 export default function PowerDesc(props) {
   const canUnlock = isUnlockable(props.powerKey, props.data);
-  const [unlockable, setUnlockable] = useState(false);
 
   return (
     <>
@@ -24,7 +22,7 @@ export default function PowerDesc(props) {
           />
           {/* Description */}
           <div className="absolute mx-[40%] my-10 top-10 w-150 h-100 text-xl">
-            <p className="text-pink-500 font-extrabold font-serif mb-10 text-center text-5xl">
+            <p className="text-pink-500 font-extrabold font-serif mb-10 text-5xl">
               {props.name}
             </p>
             <div className="text-white m-2">
@@ -42,16 +40,6 @@ export default function PowerDesc(props) {
             handleClaim={props.handleClaim}
             canUnlock={canUnlock}
           />
-          {/* <button
-            className={
-              "text-pink-500 absolute bottom-10 mx-[49%] border-2 px-3 py-1 rounded-full w-21 text-center hover:cursor-pointer " +
-              `${props.claim ? " bg-neutral-950/50" : undefined}`
-            }
-            onClick={() => props.handleClaim()}
-            disabled={!canUnlock || props.claim}
-          >
-            {props.claim ? "Claimed" : "Claim"}
-          </button> */}
         </div>
       </div>
     </>
