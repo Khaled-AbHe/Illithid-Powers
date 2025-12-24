@@ -1,10 +1,11 @@
 import Menu from "./components/Menu";
+import { DataProvider } from "./components/DataContext.jsx";
 
 function App() {
   return (
-    <div>
+    <DataProvider>
       <Menu />
-    </div>
+    </DataProvider>
   );
 }
 
