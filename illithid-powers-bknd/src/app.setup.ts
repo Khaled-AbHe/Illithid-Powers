@@ -10,7 +10,10 @@ export function configureApp(app: INestApplication) {
       .set("trust proxy", /^\d+$/.test(trust) ? Number(trust) : trust);
   }
   app.enableCors({
-    origin: (process.env.CORS_ORIGIN ?? "http://localhost:5173").split(","),
+    origin: process.env.CORS_ORIGIN ?? "http://localhost:5173",
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS",
+    credentials: true,
+    allowedHeaders: "Content-Type, Accept, Authorization",
   });
   app.useGlobalPipes(
     new ValidationPipe({
