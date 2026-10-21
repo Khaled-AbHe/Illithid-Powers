@@ -1,0 +1,16 @@
+{
+  "extends": "./tsconfig.json",
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "src/db/seed.ts",
+    "src/db/seed-test-accounts.ts",
+    "src/db/retire-dm.cli.ts"
+  ],
+  "compilerOptions": {
+    "rootDir": "./src"
+  }
+}
